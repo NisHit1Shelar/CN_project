@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>File Sharing - Receiver</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<!-- Navigation Bar -->
+	<div class="navbar">
+		<div class="logo">
+			<img src="logo.png" alt="Logo">
+			<span>FileShare</span>
+		</div>
+		<div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="sender.html">Send Files</a>
+            <a href="receiver.html">Receive Files</a>
+        </div>
+		<button class="get-started">Get Started</button>
+	</div>
+
+	<!-- Main Content -->
+	<div class="app">
+		<div class="screen join-screen active">
+			<div class="form">
+				<h2>Join a Share Room</h2>
+				<div class="form-input">
+					<label>Enter Room ID</label>
+					<input type="text" id="join-id" placeholder="Enter Room ID">
+				</div>
+				<div class="form-input">
+					<button id="receiver-start-con-btn">Connect</button>
+				</div>
+			</div>
+		</div>
+		<div class="screen fs-screen">
+			<div class="files-list">
+				<div class="title">Shared Files</div>
+			</div>	
+		</div>
+	</div>
+
+	<script src="socket.io/socket.io.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.1/download.min.js"></script>
+	<script src="receiver.js"></script>
+</body>
+</html>

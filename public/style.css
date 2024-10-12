@@ -1,0 +1,256 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #0077b6, rgb(235, 211, 167));
+    padding: 20px 20px;
+    margin: 20px;
+    border-radius: 100px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    z-index: 10;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #efefef;
+}
+
+/* Navigation Links Styling */
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #0077b6;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #0096c7;
+}
+
+/* Get Started Button Styling */
+.get-started {
+    background: #ffb703;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.get-started:hover {
+    background: #fb8500;
+}
+
+/* Adjustments for App Container */
+body {
+    padding-top: 70px; /* Space for navbar */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .nav-links a {
+        margin: 5px 0;
+    }
+    .get-started {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+
+
+/* App Container */
+.app {
+    background: rgba(255, 255, 255, 0.4);
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+/* Form Styling */
+.form {
+    text-align: center;
+}
+.form h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #383434;
+    margin-bottom: 20px;
+}
+.form-input {
+    margin: 20px 0;
+}
+.form-input button {
+    background: #00b4d8;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.form-input button:hover {
+    background: #0096c7;
+}
+
+/* File Input Styling */
+.file-input {
+    margin-top: 30px;
+    text-align: center;
+    background: rgba(0, 182, 218, 0.1);
+    border: 2px dashed #00b4d8;
+    border-radius: 15px;
+    padding: 20px;
+}
+.file-label {
+    font-weight: bold;
+    color: #0077b6;
+}
+
+
+.file-input {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.file-input label {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.files-list {
+    margin-top: 15px;
+    max-height: 300px; /* Increased height for better visibility */
+    overflow-y: auto;  /* Scrollable if the list is too long */
+    border: 1px solid #00b4d8;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f5f9ff;
+}
+
+.files-list .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #00b4d8;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #e6f7ff; /* Light blue for files */
+}
+
+.files-list .progress {
+    font-weight: bold;
+    color: #0077b6;
+}
+
+/* Ensure Responsive Design */
+@media (max-width: 768px) {
+    .files-list {
+        max-height: 200px;
+    }
+
+    .files-list .item {
+        font-size: 14px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .app {
+        width: 90%;
+        padding: 30px;
+    }
+    .form h2 {
+        font-size: 28px;
+    }
+    .form-input button {
+        width: 100%;
+        padding: 12px;
+    }
+}
+/* Styling for Join ID Box */
+.join-id-box {
+    margin-top: 15px;
+    padding: 20px;
+    border: 2px dashed #0077b6;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    color: #0077b6;
+}
+
+.room-id-text {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    color: #0077b6;
+}
+label {
+    cursor: default;
+    padding: 4px;
+    color: #383434;
+}
+input[type="text" i] {
+    text-align: center;
+    padding-block: 10px;
+    padding-inline: 2px;
+    border-radius: 10px;
+}
+div {
+    display: block;
+    unicode-bidi: isolate;
+    color: #383434;
+}

@@ -1,0 +1,165 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #0077b6, rgb(235, 211, 167));
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 100px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    z-index: 10;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #efefef;
+}
+
+/* Navigation Links Styling */
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #0077b6;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #0096c7;
+}
+
+/* Get Started Button Styling */
+.get-started {
+    background: #ffb703;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.get-started:hover {
+    background: #fb8500;
+}
+
+/* Adjustments for App Container */
+body {
+    padding-top: 70px; /* Space for navbar */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .nav-links a {
+        margin: 5px 0;
+    }
+    .get-started {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+
+/* App Container */
+.app {
+    background: rgba(255, 255, 255, 0.4);
+    padding: 80px;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+/* Header Styling */
+.header h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #383434;
+    margin-bottom: 10px;
+}
+.header p {
+    font-size: 20px;
+    color: #38424b;
+}
+
+/* Button Styling */
+.buttons {
+    margin-top: 30px;
+}
+button {
+    background: #00b4d8;
+    border: none;
+    padding: 15px 40px;
+    margin: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+button:hover {
+    background: #0096c7;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 36px;
+    }
+    .header p {
+        font-size: 18px;
+    }
+    button {
+        width: 100%;
+        padding: 15px 20px;
+    }
+}
