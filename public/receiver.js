@@ -2,6 +2,22 @@
 	const socket = io();
 	let sender_uid;
 
+	// Function to show alert and automatically hide it after 1.5 seconds
+	function showAlert(message) {
+		// Create an alert element
+		const alertBox = document.createElement("div");
+		alertBox.classList.add("alert");
+		alertBox.innerText = message;
+
+		// Append alert to body or a container
+		document.body.appendChild(alertBox);
+
+		// Automatically hide the alert after 1.5 seconds (1500ms)
+		setTimeout(() => {
+			alertBox.remove();
+		}, 1500);
+	}
+
 	// Event listener for the "Connect" button
 	document.querySelector("#receiver-start-con-btn").addEventListener("click", function() {
 		sender_uid = document.querySelector("#join-id").value;
@@ -18,7 +34,10 @@
 			uid: joinID
 		});
 
-		// Switch to the file sharing screen
+		// Show connection successful alert
+		showAlert("Connection Successful!");
+
+		// Switch to the file sharing screen after connection
 		document.querySelector(".join-screen").classList.remove("active");
 		document.querySelector(".fs-screen").classList.add("active");
 	});
