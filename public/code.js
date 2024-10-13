@@ -1,4 +1,4 @@
-(function () {
+(function() {
     let receiverID;
     const socket = io();
 
@@ -62,7 +62,6 @@
         // Emit file metadata to the server
         socket.emit("file-meta", { uid: receiverID, metadata: metadata });
 
-        // Keep track of the current file transfer state
         let currentChunk = 0;
         let totalChunks = Math.ceil(metadata.total_buffer_size / metadata.buffer_size);
 
@@ -71,6 +70,9 @@
             let chunkStart = currentChunk * metadata.buffer_size;
             let chunkEnd = Math.min(chunkStart + metadata.buffer_size, metadata.total_buffer_size);
             let chunk = buffer.slice(chunkStart, chunkEnd);
+
+            // Log each chunk being sent
+            console.log(`Sending chunk ${currentChunk + 1} of ${totalChunks}, size: ${chunk.length} bytes`);
 
             // Emit the chunk if it exists
             if (chunk.length > 0) {
