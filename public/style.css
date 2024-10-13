@@ -272,7 +272,7 @@ div {
 
 /* Optional: fade out transition for alert */
 .alert {
-	animation: fadeOut 1.5s forwards;
+	animation: fadeOut 3s forwards;
 }
 
 @keyframes fadeOut {
