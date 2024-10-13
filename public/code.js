@@ -47,13 +47,13 @@
             // Determine the appropriate chunk size based on file size
             let chunkSize;
             if (buffer.length < 64 * 1024) {
-                chunkSize = 4 * 1024; // Use 4 KB chunks for small files (<64 KB)
+                chunkSize = 4 * 1024; // Use 4 KB chunks for small files
             } else if (buffer.length < 1 * 1024 * 1024) {
-                chunkSize = 64 * 1024; // Use 64 KB chunks for medium files (64 KB - 1 MB)
+                chunkSize = 64 * 1024; // Use 64 KB chunks for medium files
             } else if (buffer.length < 10 * 1024 * 1024) {
-                chunkSize = 128 * 1024; // Use 128 KB chunks for large files (1 MB - 10 MB)
+                chunkSize = 128 * 1024; // Use 128 KB chunks for large files
             } else {
-                chunkSize = 256 * 1024; // Use 256 KB chunks for very large files (>10 MB)
+                chunkSize = 256 * 1024; // Use 256 KB chunks for very large files
             }
 
             // Start file sharing with dynamic chunk size
@@ -65,6 +65,19 @@
         };
         reader.readAsArrayBuffer(file);
     });
+
+    // Function to show alert for both sender and receiver
+    function showAlert(message) {
+        const alertBox = document.createElement("div");
+        alertBox.classList.add("alert");
+        alertBox.innerText = message;
+        document.body.appendChild(alertBox);
+
+        // Hide after 1.5 seconds
+        setTimeout(() => {
+            alertBox.remove();
+        }, 1500);
+    }
 
     // Function to share file data in chunks
     function shareFile(metadata, buffer, progressNode) {
@@ -108,4 +121,9 @@
         // Ask for the first fs-share event to start sending
         socket.emit("fs-next", {});
     }
+
+    // Show alert when the receiver joins (for both sender and receiver)
+    socket.on("receiver-joined", function (data) {
+        showAlert("Receiver joined the room!");
+    });
 })();
