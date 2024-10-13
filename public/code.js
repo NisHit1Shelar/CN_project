@@ -44,8 +44,17 @@
             `;
             document.querySelector(".files-list").appendChild(el);
 
-            // Determine the appropriate chunk size
-            let chunkSize = buffer.length < 64 * 1024 ? 4 * 1024 : 64 * 1024;
+            // Determine the appropriate chunk size based on file size
+            let chunkSize;
+            if (buffer.length < 64 * 1024) {
+                chunkSize = 4 * 1024; // Use 4 KB chunks for small files (<64 KB)
+            } else if (buffer.length < 1 * 1024 * 1024) {
+                chunkSize = 64 * 1024; // Use 64 KB chunks for medium files (64 KB - 1 MB)
+            } else if (buffer.length < 10 * 1024 * 1024) {
+                chunkSize = 128 * 1024; // Use 128 KB chunks for large files (1 MB - 10 MB)
+            } else {
+                chunkSize = 256 * 1024; // Use 256 KB chunks for very large files (>10 MB)
+            }
 
             // Start file sharing with dynamic chunk size
             shareFile({
