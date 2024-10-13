@@ -21,6 +21,9 @@ io.on("connection", function(socket) {
         socket.join(data.uid);
         socket.in(data.sender_uid).emit("init", data.uid);
         console.log(`Receiver joined room: ${data.uid}`);
+
+        // Emit a notification to both the sender and the receiver
+        io.in(data.uid).emit("receiver-joined", { uid: data.uid });
     });
 
     // Receive and forward file metadata
@@ -29,9 +32,8 @@ io.on("connection", function(socket) {
         console.log(`File metadata received for: ${data.metadata.filename}, size: ${data.metadata.total_buffer_size}`);
     });
 
-    // Receive and forward file chunks (with logging)
+    // Receive and forward file chunks
     socket.on("file-raw", function(data) {
-        // Log the chunk size and metadata on the server
         console.log(`Chunk received: ${data.buffer.length} bytes`);
         socket.in(data.uid).emit("fs-share", data.buffer);
     });
