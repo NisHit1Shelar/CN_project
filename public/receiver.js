@@ -15,7 +15,7 @@
 		// Automatically hide the alert after 1.5 seconds (1500ms)
 		setTimeout(() => {
 			alertBox.remove();
-		}, 1500);
+		}, 3000);
 	}
 
 	// Event listener for the "Connect" button
